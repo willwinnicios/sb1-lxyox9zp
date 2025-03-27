@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🎨 Cores principais */
+:root {
+  --neon-pink: #ff007f;
+  --neon-purple: #9b51e0;
+  --neon-blue: #00f0ff;
+
+  --fyre-yellow: #d7e626;
+  --fyre-orange: #ff5702;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  @apply bg-gray-900;
+}
+
+/* 🔮 Gradiente RGB antigo (ainda pode ser usado) */
+.gradient-bg {
+  background: linear-gradient(
+    45deg,
+    var(--neon-pink),
+    var(--neon-purple),
+    var(--neon-blue)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🔥 Gradiente Fyre animado (verde lima + laranja) */
+.fyre-bg {
+  background: linear-gradient(135deg, var(--fyre-yellow), var(--fyre-orange));
+  background-size: 200% 200%;
+  animation: fyre-gradient 8s ease infinite;
+}
+
+@keyframes fyre-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 💠 Efeito vidro */
+.glass-card {
+  @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+}
+
+/* ✨ Botão neon original (mantido) */
+.neon-button {
+  @apply relative overflow-hidden rounded-xl px-6 py-3 font-semibold transition-all duration-300
+         hover:shadow-[0_0_20px_rgba(155,81,224,0.5)] hover:scale-105;
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+}
+
+/* 🔥 Botão Fyre (amarelo-laranja) */
+.fyre-button {
+  @apply px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300;
+  background: linear-gradient(to right, var(--fyre-yellow), var(--fyre-orange));
+}
+
+.fyre-button:hover {
+  box-shadow: 0 0 12px var(--fyre-yellow), 0 0 24px var(--fyre-orange);
+  transform: scale(1.03);
+}
+
+/* ✨ Hover geral com brilho */
+.hover-glow {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+/* 💡 Título com leve brilho branco */
+.glow-title {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+/* Adicione no index.css */
+.fyre-light-bg {
+  background: radial-gradient(
+    circle at top left,
+    #ffffff 0%,
+    #fef3e6 50%,
+    #ffe3c3 100%
+  );
+}
+.fyre-light-bg {
+  background: radial-gradient(
+    circle at top left,
+    #ffffff 0%,
+    #fef3e6 50%,
+    #ffe3c3 100%
+  );
+}
+.fyre-light-bg {
+  background: radial-gradient(
+    circle at top left,
+    #ffffff 0%,
+    #fef3e6 50%,
+    #ffe3c3 100%
+  );
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+.neon-gradient {
+  background: linear-gradient(135deg, #000000, #0d0d0d);
+  background-size: 400% 400%;
+  animation: bgShift 15s ease infinite;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+  position: absolute;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.animate-scroll-right {
+  animation: scroll-right 40s linear infinite;
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+  position: absolute;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.whatsapp-float {
+  animation: pulse 2s ease-in-out infinite;
+}
